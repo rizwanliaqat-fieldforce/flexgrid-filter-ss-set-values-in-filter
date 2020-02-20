@@ -1,0 +1,11 @@
+<p>
+  Open filter dialog and start typing to fetch filter values from the server. Then select one or more values to filter data using the fetched values. <br>
+  When used with ServerCollectionView, ServerCollectionView would make request to the server to fetch data according to the applied filter.
+</p>
+<wj-flex-grid #grid [itemsSource]="data" (initialized)="init(grid)">
+  <wj-flex-grid-column [binding]="'id'" [header]="'ID'"></wj-flex-grid-column>
+  <wj-flex-grid-column [binding]="'country'" [header]="'Country'"></wj-flex-grid-column>
+  <wj-flex-grid-column [binding]="'date'" [header]="'Date'"></wj-flex-grid-column>
+  <wj-flex-grid-column [binding]="'sales'" [header]="'Sales'"></wj-flex-grid-column>
+  <wj-flex-grid-filter #fil (initialized)="initFil(fil)"></wj-flex-grid-filter>
+</wj-flex-grid>
